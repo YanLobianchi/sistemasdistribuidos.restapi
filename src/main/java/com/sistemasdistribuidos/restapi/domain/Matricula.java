@@ -1,5 +1,7 @@
 package com.sistemasdistribuidos.restapi.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,14 +19,18 @@ import java.io.Serializable;
 public class Matricula {
 
 	@EmbeddedId
+	@JsonIgnore
 	private MatriculaId id = new MatriculaId();
 
+	@JsonBackReference
 	@ManyToOne
-	@MapsId
+	@MapsId("alunoId")
+	@JoinColumn(name = "alunoId", referencedColumnName = "id", updatable = false, insertable = false)
 	private Aluno aluno;
 
 	@ManyToOne
-	@MapsId
+	@MapsId("cursoId")
+	@JoinColumn(name = "cursoId", referencedColumnName = "id", updatable = false, insertable = false)
 	private Curso curso;
 
 	private Float frequencia;

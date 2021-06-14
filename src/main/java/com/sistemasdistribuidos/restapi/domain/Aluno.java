@@ -1,5 +1,6 @@
 package com.sistemasdistribuidos.restapi.domain;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 
 import javax.persistence.*;
@@ -23,7 +24,8 @@ public class Aluno {
 	@Column(nullable = false)
 	private String nome;
 
-	@OneToMany(mappedBy = "matricula")
+	@JsonManagedReference
+	@OneToMany(mappedBy = "aluno", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
 	private final Set<Matricula> matriculas = new HashSet<>();
 
 }

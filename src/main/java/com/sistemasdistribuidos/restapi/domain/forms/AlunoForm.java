@@ -1,4 +1,4 @@
-package com.sistemasdistribuidos.restapi.domain;
+package com.sistemasdistribuidos.restapi.domain.forms;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
