@@ -4,8 +4,8 @@ spring:
       ddl-auto: update
   datasource:
     driverClassName: org.postgresql.Driver
-    username: ${POSTGRES_USERNAME:zgbd}
-    password: ${POSTGRES_PASSWORD:fibo123}
+    username: ${POSTGRES_USERNAME:postgres}
+    password: ${POSTGRES_PASSWORD:12345}
     url: jdbc:postgresql://${POSTGRES_DATABASE_URL:localhost:5432/rest-api}
 springdoc:
   api-docs:
