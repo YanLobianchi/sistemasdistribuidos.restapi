@@ -1,0 +1,16 @@
+# Rest API
+
+Projeto destinado à conclusão da disciplina de Sistemas Distribuídos visando o aprendizado prático da arquitetura REST
+
+## Setup desenvolvimento
+
+- Para subir a aplicação com as configurações de desenvolvimento é necessário:
+    - PostgreSQL 11+
+    - Java 16+
+    - Gradle 7+ (Opcional)
+
+## Rodar Aplicação
+
+- Criar o banco `rest-api` no servidor do Postgres local (`localhost`)
+- Dependendo das configurações de autenticação do servidor, é necessário modificar no `application.yml` ou passar como parâmetro na runConfiguration os parâmetros de autenticação `spring.datasource.username` e `spring.datasource.password` (no IntellijIDEA fica em Configuration -> Environment -> Program Arguments)
+- A Aplicação roda por padrão na porta 8080 com a URL completa: http://localhost:8080/, e o front-end do Swagger é acessível no endpoint `/swagger-ui` (http://localhost:8080/swagger-ui)
