@@ -15,7 +15,7 @@ public class RestAPIApplication {
 	}
 
 	@Bean
-	public OpenAPI springShopOpenAPI() {
+	public OpenAPI openAPI() {
 		return new OpenAPI()
 				.info(new Info().title("Rest API")
 								.description("Rest API para a disciplina de Sistemas Distribuídos")
